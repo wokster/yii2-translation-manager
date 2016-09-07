@@ -3,3 +3,5 @@ CRUD for storage and editing of translations in a database. Works with a common 
 
 not ready yet
 soon
+
+yii migrate --migrationPath=@yii/i18n/migrations/
