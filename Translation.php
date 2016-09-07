@@ -1,6 +1,6 @@
 <?php
 
-namespace common\modules\translation;
+namespace wokster\translationmanager;
 
 /**
  * translation module definition class
@@ -10,7 +10,7 @@ class Translation extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'common\modules\translation\controllers';
+    public $controllerNamespace = 'wokster\translationmanager\controllers';
 
     /**
      * @inheritdoc
