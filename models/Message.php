@@ -1,6 +1,6 @@
 <?php
 
-namespace common\modules\translation\models;
+namespace wokster\translationmanager\models;
 
 use Yii;
 
@@ -52,7 +52,7 @@ class Message extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getId0()
+    public function getIds()
     {
         return $this->hasOne(SourceMessage::className(), ['id' => 'id']);
     }
