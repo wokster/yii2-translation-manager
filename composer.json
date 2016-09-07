@@ -1,0 +1,21 @@
+{
+"name": "wokster/yii2-translation-manager",
+"description": "CRUD for storage and editing of translations in a database. Works with a common Yii2 solution (yii\i18n\DbMessageSource)",
+"type": "yii2-extension",
+"keywords": ["yii2","extension","translation","manager","db"],
+"license": "BSD-3-Clause",
+"authors": [
+{
+"name": "Maksym Tymofeiev",
+"email": "wokster@list.ru"
+}
+],
+"require": {
+"yiisoft/yii2": "*"
+},
+"autoload": {
+"psr-4": {
+"wokster\\translationManager\\": ""
+}
+}
+}
