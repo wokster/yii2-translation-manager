@@ -11,7 +11,8 @@ add to modules in config
 'translate-manager' => [
             'class' => 'wokster\translationmanager\TranslationManager',
             'languages' => ['en','ru','fr'],
-        ],```
+        ],
+```
 
 config i18n like:
 
