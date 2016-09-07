@@ -4,4 +4,15 @@ CRUD for storage and editing of translations in a database. Works with a common 
 not ready yet
 soon
 
-yii migrate --migrationPath=@yii/i18n/migrations/
+create tables in db
+run common yii2 migration:
+`yii migrate --migrationPath=@yii/i18n/migrations/`
+
+add module in config
+`
+'modules' => [
+'translate-manager' => [
+'class' => 'wokster\translationmanager\TranslationManager',
+],
+]
+`
