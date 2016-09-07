@@ -27,17 +27,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
                 <div class="box-body">
+                    <?php
+                    $arr = [
+                        'id',
+                        'category',
+                        'message:ntext',
+                    ];
+                    foreach ($model->languages as $key=>$one){
+                        $arr[] = ['label'=>$key, 'value' => $one];
+                    }
+                    ?>
                     <?= DetailView::widget([
                     'model' => $model,
-                    'attributes' => [
-                    
-																		'id',
-                                    'category',
-                                    'message:ntext',
-                                    'en',
-                                    'fr',
-                                    'ru',
-                                                        ],
+                    'attributes' => $arr,
                     ]) ?>
                 </div>
             </div>

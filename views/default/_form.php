@@ -49,21 +49,13 @@ use yii\widgets\ActiveForm;
                       ?>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                      <?= $form->field($model, 'en')->textarea(['rows' => 1]) ?>
+                  <?php foreach (Yii::$app->getModule('translate-manager')->languages as $one): ?>
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12">
+                        <?= $form->field($model, 'languages['.$one.']')->label($one)->textarea(['rows' => 1]) ?>
+                      </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                      <?= $form->field($model, 'fr')->textarea(['rows' => 1]) ?>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                      <?= $form->field($model, 'ru')->textarea(['rows' => 1]) ?>
-                    </div>
-                  </div>
+                  <?php endforeach; ?>
                   
                   <div class="row">
                     <div class="col-xs-12 col-md-12">

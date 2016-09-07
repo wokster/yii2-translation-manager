@@ -16,12 +16,19 @@ use yii\helpers\ArrayHelper;
  */
 class SourceMessage extends \yii\db\ActiveRecord
 {
-    public $ru;
-    public $en;
-    public $fr;
+    public $languages;
     /**
      * @inheritdoc
      */
+
+    public function __construct($config = [])
+    {
+        foreach (Yii::$app->getModule('translate-manager')->languages as $one){
+            $config['languages'][$one] = null;
+        }
+        parent::__construct($config);
+    }
+
     public static function tableName()
     {
         return 'source_message';
@@ -33,8 +40,9 @@ class SourceMessage extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['message','ru','en','fr'], 'string'],
-            [['category'], 'string', 'max' => 255],
+            ['message', 'string'],
+            ['category', 'string', 'max' => 255],
+            ['languages','safe'],
         ];
     }
 
@@ -49,7 +57,6 @@ class SourceMessage extends \yii\db\ActiveRecord
             'message' => 'key',
         ];
     }
-
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -69,10 +76,9 @@ class SourceMessage extends \yii\db\ActiveRecord
 
     public function afterFind()
     {
-        $arr = ['ru','en','fr'];
-        foreach ($arr as $one){
-            $this->$one = $this->getTranslation($one);
-        }
+            foreach ($this->languages as $key=>$one){
+                $this->languages[$key] = $this->getTranslation($key);
+            }
     }
 
     public function beforeDelete()
@@ -88,25 +94,24 @@ class SourceMessage extends \yii\db\ActiveRecord
     public function afterSave($insert, $changedAttributes)
     {
         if ($insert) {
-            $arr = ['ru','en','fr'];
-            foreach ($arr as $one){
+            foreach ($this->languages as $key=>$one){
                 $model = new Message();
                 $model->id = $this->id;
-                $model->language = $one;
-                if(empty($this->$one)){
+                $model->language = $key;
+                if(empty($one)){
                     $model->translation = null;
                 }else{
-                    $model->translation = $this->$one;
+                    $model->translation = $one;
                 }
                 $model->save();
             }
         }else{
             foreach ($this->messages as $one){
                 $lang = $one->language;
-                if(empty($this->$lang)){
+                if(empty($this->languages[$lang])){
                     $one->translation = null;
                 }else{
-                    $one->translation = $this->$lang;
+                    $one->translation = $this->languages[$lang];
                 }
                 $one->save();
             }

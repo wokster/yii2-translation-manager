@@ -20,35 +20,19 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="col-xs-12">
+        <a href="<?=\yii\helpers\Url::to(['create'])?>" class="btn btn-success">create new</a>
         <div class="box box-default">
             <div class="box-header with-border">
                 <span class="label label-default">записей <?= $dataProvider->getCount()?> из <?= $dataProvider->getTotalCount()?></span>
-                <div class="box-tools pull-right">
-                    <?/*= \kartik\export\ExportMenu::widget([
-                        'dataProvider' => $dataProvider,
-                        'template' => '<a href="'.\yii\helpers\Url::toRoute('create').'" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Создать Translation</a>{columns}{menu}',
-                        'fontAwesome' => true,
-                        'columnSelectorOptions' => ['label'=>"что экспортировать"],
-                        'dropdownOptions' => ['label'=>"как экспортировать"]
-                    ])*/?>
-                </div>
             </div>
             <div class="box-body">
-                        <?= GridView::widget([
-            'summary' => '',
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-        'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-                'category',
-                'message:ntext',
-                'en:ntext',
-                'fr:ntext',
-                'ru:ntext',
-                ['class' => 'yii\grid\ActionColumn'],
-                    ],
+                <?= GridView::widget([
+                    'summary' => '',
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => Yii::$app->controller->module->grid_column,
                 ]); ?>
-                        </div>
+            </div>
         </div>
     </div>
 </div>
