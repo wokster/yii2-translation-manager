@@ -1,19 +1,19 @@
 <?php
 
-namespace common\modules\translation\controllers;
+namespace wokster\translationmanager\controllers;
 
-use common\modules\translation\models\Message;
+use wokster\translationmanager\models\Message;
 use Yii;
-use common\modules\translation\models\SourceMessage;
-use common\modules\translation\models\SourceMessageSearch;
-use backend\components\MainController;
+use wokster\translationmanager\models\SourceMessage;
+use wokster\translationmanager\models\SourceMessageSearch;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * DefaultController implements the CRUD actions for SourceMessage model.
  */
-class DefaultController extends MainController
+class DefaultController extends Controller
 {
     public function behaviors()
     {
@@ -52,24 +52,6 @@ class DefaultController extends MainController
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
-    }
-    public function actionFill()
-    {
-/*        $i = 0;
-        $ru = include(Yii::getAlias('@common').'/translations/ru/mail.php');
-        $fr = include(Yii::getAlias('@common').'/translations/fr/mail.php');
-        foreach ($ru as $key=>$one){
-                $model = new SourceMessage();
-                $model->category = 'text';
-                $model->message = $key;
-                $model->ru = $one;
-                if(isset($fr[$key])){
-                    $model->fr = $fr[$key];
-                }
-                $model->save();
-            $i++;
-        }*/
-        echo phpinfo();
     }
 
     /**
