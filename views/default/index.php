@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\modules\translation\models\SourceMessageSearch */
+/* @var $searchModel wokster\translationmanager\models\SourceMessageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Translations';
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="pad no-print">
         <div class="callout callout-info" style="margin-bottom: 0!important;">
             <h4><i class="fa fa-info"></i> Module Rules:</h4>
-            If there is no translation for "fr" or "en" or "ru", displayed text from "key". Accordingly, if the "key" and the translation is identical, does not necessarily make the translation.
+            If there is no translation, displayed text from "key". Accordingly, if the "key" and the translation is identical, does not necessarily make the translation.
             "Key" is an identifier. It is in the site code and serves as a link with this module. To add a new translation, it is necessary not only to create it here, but also insert the corresponding key in site code.
         </div>
     </div>
@@ -40,12 +40,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
         'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
-'category',
-'message:ntext',
-'en:ntext',
-'fr:ntext',
-'ru:ntext',
-                        ['class' => 'yii\grid\ActionColumn'],
+                'category',
+                'message:ntext',
+                'en:ntext',
+                'fr:ntext',
+                'ru:ntext',
+                ['class' => 'yii\grid\ActionColumn'],
                     ],
                 ]); ?>
                         </div>

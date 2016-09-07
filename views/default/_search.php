@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\translation\models\SourceMessageSearch */
+/* @var $model wokster\translationmanager\SourceMessageSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

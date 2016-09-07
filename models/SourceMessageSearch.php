@@ -5,7 +5,6 @@ namespace wokster\translationmanager\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\modules\translation\models\SourceMessage;
 
 /**
  * SourceMessageSearch represents the model behind the search form about `common\modules\translation\models\SourceMessage`.

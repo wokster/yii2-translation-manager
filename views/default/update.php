@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\translation\models\SourceMessage */
+/* @var $model wokster\translationmanager\models\SourceMessage */
 
 $this->title = 'Редактировать Translation: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Translations', 'url' => ['index']];
