@@ -1,6 +1,6 @@
 <?php
 
-namespace common\modules\translation\models;
+namespace wokster\translationmanager\models;
 
 use Yii;
 use yii\base\Model;
