@@ -10,14 +10,10 @@ run common yii2 migration:
 
 add module in config
 
-<code>
+'
 'modules' => [
-
 'translate-manager' => [
-
 'class' => 'wokster\translationmanager\TranslationManager',
-
 ],
-
 ]
-</code>
+'
