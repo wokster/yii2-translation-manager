@@ -10,7 +10,8 @@ run common yii2 migration:
 
 add module in config
 
-`'modules' => [
+<code>
+'modules' => [
 
 'translate-manager' => [
 
@@ -18,4 +19,5 @@ add module in config
 
 ],
 
-]`
+]
+</code>
