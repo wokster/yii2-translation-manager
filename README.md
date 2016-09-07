@@ -7,14 +7,15 @@ add coposer.json
 
 add to modules in config
 
-`        'translate-manager' => [
+```php
+'translate-manager' => [
             'class' => 'wokster\translationmanager\TranslationManager',
             'languages' => ['en','ru','fr'],
-        ],`
+        ],```
 
 config i18n like:
 
-`
+```php
         'i18n' => [
             'translations' => [
                 'yii*' => [
@@ -30,10 +31,10 @@ config i18n like:
                 ]
             ],
         ],
-`
+```
 
 run common yii2 migration
 
-`yii migrate --migrationPath=@yii/i18n/migrations/`
-
-
+```php
+yii migrate --migrationPath=@yii/i18n/migrations/
+```
