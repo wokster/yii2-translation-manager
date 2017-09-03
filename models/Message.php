@@ -20,7 +20,7 @@ class Message extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'message';
+        return '{{%message}}';
     }
 
     /**
