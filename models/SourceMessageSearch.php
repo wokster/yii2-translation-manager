@@ -44,7 +44,7 @@ class SourceMessageSearch extends SourceMessage
         $query = SourceMessage::find();
         $languages = Yii::$app->getModule('translate-manager')->languages;
         foreach ($languages as $one){
-            $query->leftJoin('message as '.$one, $one.'.id = source_message.id and '.$one.'.language = "'.$one.'"');
+            $query->leftJoin('{{%message}} as '.$one, $one.'.id = {{%source_message}}.id and '.$one.'.language = "'.$one.'"');
         }
 
         $dataProvider = new ActiveDataProvider([
